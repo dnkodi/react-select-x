@@ -1,0 +1,206 @@
+.wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 87px;
+    width: 320px;
+
+    &.inline {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+.label {
+    align-self: flex-start;
+    color: #201F21;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 19px;
+    margin-bottom: 5px;
+
+    &::selection {
+        background: #CBEFEA;
+    }
+}
+
+.select {
+    border: 1px solid #BEBEBE;
+    border-radius: 3px;
+    // box-shadow: 0 8px 12px -6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+
+    &.searchable {
+        background-color: #FCFBFB;
+        box-shadow: none;
+
+        .selectItem {
+            box-shadow: none;
+        }
+
+        &.open {
+            border: none;
+
+            input::placeholder {
+                color: #9B9B9B;
+            }
+        }
+
+        &.open .selectItem {
+            box-shadow: none;
+            // border: none;
+            border: solid 1px #AEBCD3;
+        }
+    }
+
+    &.disabled .selectItem {
+        cursor: default;
+
+        .clickableInput, .arrowBox svg, input::placeholder {
+            color: #9B9B9B;
+        }
+    }
+
+    &.error {
+        border: 1px solid #E1C3C7;
+    }
+
+    .selectItem {
+        align-items: center;
+        background-color: #FCFBFB;
+        display: flex;
+        justify-content: space-between;
+
+        &:focus {
+            outline: 0;
+            box-shadow: inset 2px 3px 4px 0 rgba(0, 0, 0, 0.09);
+            border: solid 1px #AEBCD3;
+
+        }
+
+        .input {
+            border: 0 none;
+            color: #4D4D4D;
+            font-size: 15px;
+            line-height: 18px;
+            margin: 10px 0;
+            padding-left: 16.4px;
+            width: 100%;
+
+            &::placeholder {
+                color: #4D4D4D;
+                opacity: 1;
+            }
+
+            &:focus {
+                outline: 0;
+            }
+
+            &::selection {
+                background: #CBEFEA;
+            }
+        }
+
+        input {
+            background-color: transparent;
+            overflow: hidden;
+            @extend .input;
+            padding: 0 16.4px;
+            text-overflow: ellipsis;
+        }
+
+        .clickableInput {
+            @extend .input;
+        }
+
+        .arrowBox {
+            display: inline-block;
+            width: 40px;
+
+            svg {
+                color: #487574;
+            }
+        }
+    }
+
+    .options {
+        background-color: #FCFBFB;
+        margin: 0;
+        max-height: 250px;
+        overflow-y: auto;
+        padding: 0;
+        position: absolute;
+        width: 99.5%;
+        z-index: 1;
+
+        li {
+            cursor: pointer;
+            font-size: 14px;
+            list-style: none;
+            margin: 0;
+            padding: 12px 20px;
+        }
+
+        .focused {
+            font-weight: bold;
+            background-color: #CED8E6;
+        }
+    }
+
+    &.open {
+        border-radius: 3px 3px 0 0;
+
+        .options {
+            border: 1px solid #AEBCD3;
+            border-radius: 0 0 3px 3px;
+            border-top: none;
+        }
+    }
+}
+
+.errorText {
+    align-self: flex-start;
+    color: #D0021B;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 7px;
+}
+
+/* Multi Select */
+.select .selectItem {
+    .multiSelectedWrapper {
+        display: inline-block;
+        padding: 10px 50px 10px 0;
+        width: 100%;
+
+        .selectValue {
+            background-color: #CBEFEA;
+            border: 1px solid #CBEFEA;
+            border-radius: 0 5px 5px 0;
+            color: #325052;
+            display: inline-flex;
+            margin: 0 0 5px 10px;
+            padding: 5px;
+
+            .selectValueIcon {
+                cursor: pointer;
+                padding: 1px 5px 2px;
+            }
+
+            .selectValueLabel {
+                font-size: 14px;
+                font-weight: 600;
+                padding: 2px 5px;
+            }
+        }
+
+        input {
+            margin: 0;
+            width: auto;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+# IDE Files
+.idea/
+*.ipr
+*.iws
+*.iml
+*.vscode/
+
+# NPM Files
+node_modules/
+package-lock.json
+npm-debug.log
+
+# Build files
+dist/
+
+# OSX/Windows Folder Configs
+**/.DS_Store
+**/*.ini

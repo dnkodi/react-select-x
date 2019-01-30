@@ -1,0 +1,15 @@
+svg {
+    stroke: #7F7F7F;
+    fill: #7F7F7F;
+    height: 1rem;
+    width: 1rem;
+
+    &:focus {
+        // box-shadow: 0 0 5px #7F7F7F;
+        outline: none;
+    }
+}
+.line {
+    stroke-linecap: round;
+    stroke-width: 3;
+}
