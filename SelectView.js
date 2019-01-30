@@ -35,15 +35,68 @@ export class SelectView extends PureComponent {
 
     render() {
         return (
-            <div style={{ margin: 10 }}>
-                <h1>Select Component</h1>
+            <div style={{ margin: 10, display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <h2>Select Component</h2>
                 <section>
-                    <h2>Single Select</h2>
-                    <Select margin="1rem 0" message="Please Select" name="single-select" onChange={this.handleClick} options={list} width="350px" placeholder="-Select-" searchable value={this.state.selectedValue} />
-                </section>
-                <section>
-                    <h2>Multi Select</h2>
-                    <MultiSelect margin="1rem 0" message="Please Select" name="multi-select" onChange={this.handleItemsClick} options={list} width="350px" placeholder="-Select-" value={this.state.selectedValues} />
+                    <Select
+                        label="Single Select"
+                        margin="1rem 0"
+                        name="single-select"
+                        onChange={this.handleClick}
+                        options={list}
+                        placeholder="-Select-"
+                        value={this.state.selectedValue}
+                        width="350px"
+                    />
+
+                    <Select
+                        disabled
+                        label="Single Select (disabled)"
+                        margin="1rem 0"
+                        name="single-select"
+                        onChange={this.handleClick}
+                        options={list}
+                        placeholder="-Select-"
+                        value={this.state.selectedValue}
+                        width="350px"
+                    />
+
+                    <Select
+                        inline
+                        searchable
+                        label="Inline Searchable Select"
+                        margin="1rem 2rem 1rem 0"
+                        name="single-select"
+                        onChange={this.handleClick}
+                        options={list}
+                        placeholder="-Select-"
+                        value={this.state.selectedValue}
+                        width="350px"
+                    />
+
+                    <Select
+                        disabled
+                        label="Searchable Select (disabled)"
+                        name="single-select"
+                        margin="1rem 0"
+                        onChange={this.handleClick}
+                        options={list}
+                        placeholder="-Select-"
+                        searchable
+                        value={this.state.selectedValue}
+                        width="350px"
+                    />
+                    
+                    <MultiSelect
+                        label="Multi-Select"
+                        name="multi-select"
+                        margin="1rem 0"
+                        onChange={this.handleItemsClick}
+                        options={list}
+                        placeholder="-Select-"
+                        value={this.state.selectedValues}
+                        width="350px"
+                    />
                 </section>
             </div>
         )
