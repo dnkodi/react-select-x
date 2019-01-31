@@ -84,7 +84,7 @@ class App extends React.Component {
 
 ### TODO
 
-At the moment react-select-x does not handle loading of options asynchronously so this needs to be implemented and few other more fetaures as well. Feel free to raise an issue if you run into something. PR's are most welcome. This repos is still in its early stage. :)
+At the moment react-select-x does not handle loading of options asynchronously so this needs to be implemented and few other more features as well. Feel free to raise an issue if you run into something. PR's are most welcome. This repos is still in its early stage. :)
 
 ## Development
 
