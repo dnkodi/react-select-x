@@ -103,7 +103,7 @@ Defaults to port `8080`.
 
 ## Thanks
 
-This component was inspired by: [react-select](https://github.com/JedWatson/react-select) a lovely select component done initially by Jed Watson. And many thanks to my collegues [Michael Raymond](https://www.linkedin.com/in/michael-raymond-681669107/) (the maestro) and [Deegha Galkissa](https://github.com/deegha) for helping to get this component from the ashes.
+This component was inspired by: [react-select](https://github.com/JedWatson/react-select) a lovely select component done initially by Jed Watson. And many thanks to my collegues [Michael Raymond](https://www.linkedin.com/in/michael-raymond-681669107/) (the maestro) and [Deegha Galkissa](https://github.com/deegha) for helping to get this component from scratch.
 
 
 ## License
