@@ -22,11 +22,13 @@ import { Select, MultiSelect } from 'react-select-x';
 import 'react-select-x/dist/styles.css';
 ```
 
-### Usage:
+## Usage
+
+### Select Component
 
 ```js
 import React from 'react';
-import Select from 'react-select-x';
+import { Select } from 'react-select-x';
 
 const list = [
     { value: "LBJ", label: "Lebron James" },
@@ -51,13 +53,52 @@ class App extends React.Component {
 
     return (
       <Select
-            label="Select"
-            name="single-select"
-            onChange={this.handleClick}
-            options={list}
-            placeholder="-Select-"
-            value={selectedValue}
-        />
+        label="Select"
+        name="single-select"
+        onChange={this.handleClick}
+        options={list}
+        placeholder="-Select-"
+        value={selectedValue}
+      />
+    );
+  }
+}
+```
+### MultiSelect Component
+
+```js
+import React from 'react';
+import { MultiSelect } from 'react-select-x';
+
+const list = [
+    { value: "LBJ", label: "Lebron James" },
+    { value: "SC", label: "Stepehen Curry" },
+    { value: "JH", label: "James Harden" }
+]
+
+class App extends React.Component {
+  state = {
+    selectedValues: [],
+  }
+
+  handleItemsClick(value) {
+    this.setState({
+        selectedValues: value
+    })
+  }
+
+  render() {
+    const { selectedValues } = this.state;
+
+    return (
+      <MultiSelect
+        label="Multi-Select"
+        name="multi-select"
+        onChange={this.handleItemsClick}
+        options={list}
+        placeholder="-Select-"
+        value={selectedValues}
+      />
     );
   }
 }
@@ -103,7 +144,7 @@ Defaults to port `8080`.
 
 ## Thanks
 
-This component was inspired by: [react-select](https://github.com/JedWatson/react-select) a lovely select component done initially by Jed Watson. And many thanks to my collegues [Michael Raymond](https://www.linkedin.com/in/michael-raymond-681669107/) (the maestro) and [Deegha Galkissa](https://github.com/deegha) for helping to get this component from scratch.
+This component was inspired by: [react-select](https://github.com/JedWatson/react-select) a lovely select component done by Jed Watson. And many thanks to my collegues [Michael Raymond](https://www.linkedin.com/in/michael-raymond-681669107/) (the maestro) and [Deegha Galkissa](https://github.com/deegha) for helping to get this component from scratch.
 
 
 ## License
